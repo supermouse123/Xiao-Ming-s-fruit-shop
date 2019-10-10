@@ -19,22 +19,38 @@ class Wheel(Common):
         db_table = "fruit_wheel"
 
 
-#每日必抢模型
+#总体介绍模型
 class Nav(Common):
     class Meta:
         db_table = "fruit_nav"
 
 
-#必买模型
-class MustBuy(Common):
+#时令水果模型
+class Seasonal_Fruits(Common):
     class Meta:
-        db_table = "fruit_mustbuy"
+        db_table = "fruit_seasonal"
 
 
-#首页下的商品模型
-class Shop(Common):
+#VC季模型
+class VC(Common):
     class Meta:
-        db_table = "fruit_shop"
+        db_table = "fruit_vc"
+
+
+#海鲜模型
+class SeaFood(Common):
+    class Meta:
+        db_table = "seafood"
+
+
+#主页的商品模型
+class MainShop(models.Model):
+    img = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    trackid = models.CharField(max_length=10)
+    price = models.CharField(max_length=30)
+    class Meta:
+        db_table = "fruit_mainshop"
 
 
 

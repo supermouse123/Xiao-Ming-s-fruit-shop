@@ -3,4 +3,4 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("classify view test")
+    return render(request, "classify.html")
