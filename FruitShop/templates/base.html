@@ -15,8 +15,7 @@
     <script src="{% static 'common/js/swiper.min.js' %}"></script>
     <script src="{% static 'common/js/base.js' %}"></script>
     {#  导入css和js  #}
-    {% block linkescript %}
-    {% endblock %}
+
 </head>
 <body>
 {#<header></header>#}
@@ -51,5 +50,7 @@
         </dl>
     </a>
 </footer>
+{% block linkescript %}
+    {% endblock %}
 </body>
 </html>

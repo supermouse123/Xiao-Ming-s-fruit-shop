@@ -25,5 +25,5 @@ urlpatterns = [
     url(r"^classify/", include("classify.urls", namespace="classify")),
     url(r"^home/", include("home.urls", namespace="home")),
     url(r"^myshopping/", include("MyShopping.urls", namespace="myshopping")),
-    url(r"^", views.index)
+    url(r"^$", views.index)
 ]

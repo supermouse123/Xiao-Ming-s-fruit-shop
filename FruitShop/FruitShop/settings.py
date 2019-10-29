@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'hr-#w+6)p=#(mr=c9!zzpqq6vsm7$dr+3!waxk&tx!l!qr(mn3'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -40,7 +38,8 @@ INSTALLED_APPS = [
     "cart",
     "classify",
     "home",
-    "MyShopping"
+    "MyShopping",
+    "classify.templatetags"
 
 ]
 
@@ -68,12 +67,16 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'custom_tag': "classify.templatetags.custom_tag",   #自定义的模板语言
+
+            }
         },
+
     },
 ]
 
 WSGI_APPLICATION = 'FruitShop.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -88,8 +91,6 @@ DATABASES = {
         "HOST": "127.0.0.1",
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -122,7 +123,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
