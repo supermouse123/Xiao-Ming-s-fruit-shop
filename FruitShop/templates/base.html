@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水果商店</title>
+    {# 导入css #}
+    <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/base.css' %}">
+    {#  导入js  #}
+    <script src="{% static 'common/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'common/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'common/js/swiper.min.js' %}"></script>
+    <script src="{% static 'common/js/base.js' %}"></script>
+    {#  导入css和js  #}
+
+</head>
+<body>
+{#<header></header>#}
+<div>
+    {#  主体内容的替换  #}
+    {% block contnet %}
+    {% endblock %}
+</div>
+<footer>
+    <a class="home" href="/home/index">
+        <dl>
+            <dt><span></span></dt>
+            <dd>首页</dd>
+        </dl>
+    </a>
+    <a class="classify" href="/classify/index">
+        <dl>
+            <dt><span></span></dt>
+            <dd>分类</dd>
+        </dl>
+    </a>
+    <a class="cart" href="/cart/index">
+        <dl>
+            <dt><span></span></dt>
+            <dd>购物车</dd>
+        </dl>
+    </a>
+    <a class="myshopping" href="/myshopping/index">
+        <dl>
+            <dt><span></span></dt>
+            <dd>我的</dd>
+        </dl>
+    </a>
+</footer>
+{% block linkescript %}
+    {% endblock %}
+</body>
+</html>
