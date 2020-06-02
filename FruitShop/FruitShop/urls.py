@@ -1,4 +1,4 @@
-"""FruitShop URL Configuration
+"""fruitshop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,15 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home import views
-
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^cart/", include("cart.urls", namespace="cart")),
-    url(r"^classify/", include("classify.urls", namespace="classify")),
-    url(r"^home/", include("home.urls", namespace="home")),
-    url(r"^myshopping/", include("MyShopping.urls", namespace="myshopping")),
-    url(r"^$", views.index)
+    url(r'^tinymce/', include('tinymce.urls')),                 # 富文本编辑器
+    url(r'^user/', include('user.urls', namespace='user')),     #用户模块
+    url(r'^cart/', include('cart.urls', namespace='cart')),     #购物车模块
+    url(r'^order/', include('order.urls', namespace='order')),   #订单模块
+    url(r'^', include('goods.urls', namespace='goods')),        #商品模块
+    url(r'^search', include('haystack.urls'))#全文检索url配置
 ]
